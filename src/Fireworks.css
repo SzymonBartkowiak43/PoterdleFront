@@ -1,0 +1,111 @@
+/* Fireworks.css */
+.absolute {
+    position: absolute;
+}
+
+.inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.pointer-events-none {
+    pointer-events: none;
+}
+
+.w-2 {
+    width: 0.5rem;
+}
+
+.h-2 {
+    height: 0.5rem;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+@keyframes firework-fade {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg) scale(var(--scale));
+    }
+    100% {
+        opacity: 0;
+        transform:
+                translate(var(--tx), var(--ty))
+                rotate(var(--rotation))
+                scale(0.2);
+    }
+}
+
+/* Animation for fireworks particles */
+.firework-particle {
+    position: absolute;
+    border-radius: 50%;
+    transform-origin: center;
+}
+
+/* Container styles for fireworks display */
+.fireworks-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Victory animation styles */
+@keyframes scale-in {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.winning-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #c8aa6e, #f0e6d2);
+    color: #1a1c21;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 15px rgba(200, 170, 110, 0.7);
+    animation: scale-in 0.5s ease-out forwards;
+}
+
+.firework-particle {
+    filter:
+            drop-shadow(0 0 2px rgba(255,255,255,0.7))
+            blur(1px);
+    will-change: transform, opacity;
+}
+
+@keyframes particle-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.firework-shape {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.firework-shape-alt {
+    clip-path: circle(40% at 50% 50%);
+}
