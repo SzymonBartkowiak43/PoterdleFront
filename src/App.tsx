@@ -128,7 +128,7 @@ function App() {
   const initializeGame = async (): Promise<void> => {
     try {
       setIsRestarting(true);
-      const response = await axios.get<Character>('http://localhost:8080/api/getDailyCharacter');
+      const response = await axios.get<Character>('http://138.68.85.160:8080/api/getDailyCharacter');
       setDailyCharacter(response.data);
       setError(null);
       setIsRestarting(false);
@@ -154,7 +154,7 @@ function App() {
       setIsGameWon(false);
 
       // Get a new character
-      const response = await axios.get<Character>('http://localhost:8080/api/getDailyCharacter');
+      const response = await axios.get<Character>('http://138.68.85.160:8080/api/getDailyCharacter');
       setDailyCharacter(response.data);
       setError(null);
       setIsRestarting(false);
@@ -167,7 +167,7 @@ function App() {
 
   const fetchAllCharacters = async (): Promise<void> => {
     try {
-      const response = await axios.get<Character[]>('http://localhost:8080/api/characters');
+      const response = await axios.get<Character[]>('http://138.68.85.160:8080/api/characters');
       setCharacters(response.data);
       setError(null);
     } catch (error) {
@@ -178,7 +178,7 @@ function App() {
 
   const fetchAllCharacterNames = async (): Promise<void> => {
     try {
-      const response = await axios.get<string[]>('http://localhost:8080/api/allCharactersName');
+      const response = await axios.get<string[]>('http://138.68.85.160:8080/api/allCharactersName');
       setCharacterNames(response.data);
       setError(null);
     } catch (error) {
@@ -198,7 +198,7 @@ function App() {
     try {
       // Use correct JSON structure for the request
       const response = await axios.post<CharacterResponse>(
-          'http://localhost:8080/api/guess',
+          'http://138.68.85.160:8080/api/guess',
           { guess: guessInput }
       );
 
