@@ -243,7 +243,7 @@ header p {
 .attribute-headers {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  gap: 60px;
+  gap: 70px;
   background-color: rgba(9, 20, 40, 0.8);
   border-radius: 8px 8px 0 0;
   font-weight: bold;

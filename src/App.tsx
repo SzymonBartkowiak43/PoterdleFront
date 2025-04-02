@@ -311,12 +311,12 @@ function App() {
   const renderAttributeHeaders = () => {
     return (
         <div className="attribute-headers">
-          <div>Postać</div>
-          <div>Płeć</div>
-          <div>Dom</div>
-          <div>Status krwi</div>
-          <div>Pozycja</div>
-          <div>Data urodzenia</div>
+          <div>Name</div>
+          <div>Gender</div>
+          <div>House</div>
+          <div>Blood Status</div>
+          <div>Occupation</div>
+          <div>Birth Year</div>
           <div></div>
           <div></div>
         </div>
